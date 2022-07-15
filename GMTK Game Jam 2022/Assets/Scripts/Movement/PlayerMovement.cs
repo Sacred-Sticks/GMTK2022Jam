@@ -33,8 +33,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void UpdateMovement()
     {
-        movement = transform.right * movementInput.x + transform.up * body.velocity.y;
-        body.velocity = movement * movementSpeed;
+        movement = (transform.right * movementInput.x * movementSpeed) + transform.up * body.velocity.y;
+        body.velocity = movement;
         CalculateJump();
     }
 
