@@ -180,6 +180,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 461a97f6b8b6d3643b38fbc97511207b, type: 3}
+--- !u!1 &508926520
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 508926521}
+  m_Layer: 0
+  m_Name: Feet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &508926521
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508926520}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 790554103}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &533403045
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,7 +401,8 @@ Transform:
   m_LocalPosition: {x: 0, y: -3.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 508926521}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -402,15 +434,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd22fd70167c00a44abc568ce478cd13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputs: {fileID: 0}
-  movementSpeed: 0
-  jumpHeight: 0
-  jumpWaitTime: 0
-  feet: {fileID: 0}
+  inputs: {fileID: 1806306222}
+  movementSpeed: 3
+  jumpHeight: 3
+  jumpWaitTime: 1
+  feet: {fileID: 508926521}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
-  groundDistance: 0
+    m_Bits: 8
+  groundDistance: 0.1
 --- !u!1 &1031783789
 GameObject:
   m_ObjectHideFlags: 0
@@ -423,7 +455,7 @@ GameObject:
   - component: {fileID: 1031783792}
   - component: {fileID: 1031783791}
   - component: {fileID: 1031783794}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -592,3 +624,14 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1806306222 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2195537363053358842, guid: 461a97f6b8b6d3643b38fbc97511207b, type: 3}
+  m_PrefabInstance: {fileID: 507933026}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f1f5dfda947cfc40af834309301269a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
