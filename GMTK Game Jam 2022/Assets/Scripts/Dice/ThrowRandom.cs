@@ -51,9 +51,7 @@ public class ThrowRandom : MonoBehaviour
 
     private void Throw()
     {
-        body.velocity = Random.Range(10, randomRange) * transform.up +
-                Random.Range(2, randomRange) * transform.right * sideMultiplier +
-                Random.Range(2, randomRange) * transform.forward * sideMultiplier;
+        body.velocity = Random.Range(10, randomRange) * transform.up;
         body.angularVelocity = (Random.Range(-randomRange, randomRange) * transform.up +
             Random.Range(-randomRange, randomRange) * transform.right +
             Random.Range(-randomRange, randomRange) * transform.forward) * angleMultiplier;
