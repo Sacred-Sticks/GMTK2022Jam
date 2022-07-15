@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 movementInput;
     private Vector2 movement;
 
-    [SerializeField] bool isJumping = false;
+    bool isJumping = false;
 
     private void Awake()
     {
