@@ -6,9 +6,6 @@ using UnityEngine;
 public class EnemyJumper : MonoBehaviour
 {
     [SerializeField] private Transform target;
-    [Space]
-    [SerializeField] private float jumpDistanceLow;
-    [SerializeField] private float jumpDistanceHigh;
     [SerializeField] private float jumpHeight;
     [Space]
     [SerializeField] private float lowWait;
