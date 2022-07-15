@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 movementInput;
     private Vector2 movement;
 
-    bool jumping = false;
+    [SerializeField] bool jumping = false;
 
     private void Awake()
     {
@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     {
         movementInput = inputs.GetMovement();
         UpdateMovement();
+
     }
 
     private void UpdateMovement()
