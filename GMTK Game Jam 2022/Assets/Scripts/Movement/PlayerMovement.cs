@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private GameObject inputManager;
+    [SerializeField] private PlayerInputs inputs;
     [Space]
     [SerializeField] private float movementSpeed;
     [SerializeField] private float jumpHeight;
@@ -14,7 +14,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float groundDistance;
 
-    private PlayerInputs inputs;
     private Rigidbody body;
 
     private Vector2 movementInput;
@@ -24,7 +23,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-        inputs = inputManager.GetComponent<PlayerInputs>();
         body = GetComponent<Rigidbody>();
     }
 
