@@ -46,27 +46,12 @@ public class PlayerMovement : MonoBehaviour
         return Physics.CheckSphere(feet.position, groundDistance, groundLayer);
     }
 
-    private void CalculateJump()
-    {
-        if (!(movementInput.y > 0)) return;
-
-        if (!isJumping)
-        {
-            float jumpVelocity = Mathf.Sqrt(2 * jumpHeight * -Physics.gravity.y);
-            Vector3 jumpVelocityV3 = body.velocity.x * transform.right + jumpVelocity * transform.up;
-            Debug.Log(jumpVelocity);
-            body.velocity = jumpVelocityV3;
-            isJumping = true;
-            Debug.Log("Jumping with velocity " + body.velocity.y);
-        }
-    }
-
     private IEnumerator Jump()
     {
         isJumping = true;
         float jumpSpeed = Mathf.Sqrt(2 * jumpHeight * -Physics.gravity.y);
-        Vector3 jumpVelocityV3 = body.velocity.x * transform.right + jumpSpeed * transform.up;
-        body.velocity = jumpVelocityV3;
+        Vector3 jumpVelocity = body.velocity.x * transform.right + jumpSpeed * transform.up;
+        body.velocity = jumpVelocity;
         yield return new WaitForSeconds(jumpWaitTime);
         isJumping = false;
     }
