@@ -67,4 +67,9 @@ public class PlayerInputs : MonoBehaviour
     {
         return aimingValue;
     }
+
+    private void Update()
+    {
+        
+    }
 }
