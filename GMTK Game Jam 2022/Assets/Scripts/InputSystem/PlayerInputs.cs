@@ -15,7 +15,7 @@ public class PlayerInputs : MonoBehaviour
     private InputAction aimingAction;
 
     private Vector2 movementValue;
-    private bool firingValue;
+    private float firingValue;
     private Vector2 aimingValue;
 
     private void Awake()
@@ -45,7 +45,7 @@ public class PlayerInputs : MonoBehaviour
 
     private void OnFiringChanged(InputAction.CallbackContext context)
     {
-        firingValue = context.ReadValue<bool>();
+        firingValue = context.ReadValue<float>();
     }
 
     private void OnAimingChanged(InputAction.CallbackContext context)
@@ -58,7 +58,7 @@ public class PlayerInputs : MonoBehaviour
         return movementValue;
     }
 
-    public bool GetFiring()
+    public float GetFiring()
     {
         return firingValue;
     }

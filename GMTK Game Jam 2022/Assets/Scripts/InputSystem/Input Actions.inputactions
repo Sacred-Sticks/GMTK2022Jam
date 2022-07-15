@@ -16,12 +16,12 @@
                 },
                 {
                     "name": "Firing",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "f6eda486-bae6-47aa-8cea-7f473bba09aa",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Aiming",
@@ -146,8 +146,8 @@
                 },
                 {
                     "name": "",
-                    "id": "d0fe4603-b03d-4f1b-8185-f636f7d784a8",
-                    "path": "<Keyboard>/space",
+                    "id": "599cb1a6-e654-4050-907b-f63a8b29c2fe",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -157,8 +157,8 @@
                 },
                 {
                     "name": "",
-                    "id": "599cb1a6-e654-4050-907b-f63a8b29c2fe",
-                    "path": "<Mouse>/leftButton",
+                    "id": "295fee51-76a1-4a93-a398-f7f9c6c27887",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
