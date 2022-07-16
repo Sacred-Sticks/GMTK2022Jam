@@ -1,12 +1,20 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class PlayerShoot : MonoBehaviour
 {
     [SerializeField] private PlayerInputs inputs;
+    [SerializeField] private Transform muzzle;
     [SerializeField] private GameObject projectile;
     [SerializeField] private float velocity = 4f;
     [SerializeField] private float firingDelay = 0.5f;
     private float firingDelayRemaining = 0f;
+    private Rigidbody rb;
+
+    void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
 
     void Update()
     {
@@ -14,8 +22,8 @@ public class PlayerShoot : MonoBehaviour
 
         if(inputs.GetFiring() > 0f && firingDelayRemaining == 0f)
         {
-            GameObject obj = Instantiate(projectile, transform.position, transform.rotation);
-            obj.GetComponent<Rigidbody>().velocity = new Vector3(velocity, 0f, 0f);
+            GameObject obj = Instantiate(projectile, muzzle.position, muzzle.rotation);
+            obj.GetComponent<Rigidbody>().velocity = rb.velocity + new Vector3(velocity, 0f, 0f);
             firingDelayRemaining += firingDelay;
         }
     }
