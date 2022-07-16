@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private PlayerInputs inputs;
@@ -30,15 +31,21 @@ public class PlayerMovement : MonoBehaviour
     {
         movementInput = inputs.GetMovement();
         UpdateMovement();
-
+        UpdateRotation();
     }
 
     private void UpdateMovement()
     {
-        movement = (transform.right * movementInput.x * movementSpeed) + transform.up * body.velocity.y;
+        movement = (transform.right * Mathf.Abs(movementInput.x) * movementSpeed) + transform.up * body.velocity.y;
         body.velocity = movement;
         if (!(movementInput.y > 0)) return;
         if (CheckGround() && !isJumping) StartCoroutine("Jump");
+    }
+
+    private void UpdateRotation()
+    {
+        if (movementInput.x < 0) transform.rotation = Quaternion.Euler(0, 180, 0);
+        if (movementInput.x > 0) transform.rotation = Quaternion.Euler(Vector3.zero);
     }
 
     private bool CheckGround()

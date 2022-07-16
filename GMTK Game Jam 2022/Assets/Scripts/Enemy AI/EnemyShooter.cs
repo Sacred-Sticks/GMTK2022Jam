@@ -21,7 +21,7 @@ public class EnemyShooter : MonoBehaviour
         yield return new WaitForSeconds(gracePeriod);
         while (true)
         {
-            SetRotation();
+            //SetRotation();
             Instantiate(bulletPrefab, transform);
             clip--;
             if (clip == 0)

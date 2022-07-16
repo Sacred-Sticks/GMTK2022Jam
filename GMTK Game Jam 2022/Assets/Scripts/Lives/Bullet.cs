@@ -6,36 +6,23 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] private float lifetime;
-    [SerializeField] private Vector3 velocity;
-    [SerializeField] private string targetStr;
+    [SerializeField] private float speed;
 
     private Rigidbody body;
-    private Transform target;
 
     private void Awake()
     {
         body = GetComponent<Rigidbody>();
-        if (targetStr != null)
-        {
-            GameObject targetGameObject = GameObject.Find(targetStr);
-            if(targetGameObject != null)
-                target = targetGameObject.transform;
-        }
     }
 
-    private void Start()
+    private IEnumerator Start()
     {
-        if (target != null)
-        {
-            if (target.position.x > transform.position.x)
-                body.velocity = velocity;
-            else body.velocity = -velocity;
-        }
-        StartCoroutine(DeathCycle());
-    }
+        body.velocity = speed * transform.right;
 
-    private IEnumerator DeathCycle()
-    {
+        //Remove any parental relationship
+        transform.parent = null;
+
+        //Destroy bullet after timer
         yield return new WaitForSeconds(lifetime);
         Destroy(this.gameObject);
     }

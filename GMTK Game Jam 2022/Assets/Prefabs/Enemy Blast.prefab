@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5419032478493411692}
   - component: {fileID: 6785733987904433972}
   m_Layer: 7
-  m_Name: Bullet
+  m_Name: Enemy Blast
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 3
-  velocity: {x: 5, y: 0, z: 0}
+  speed: 8
   targetStr: Player
 --- !u!114 &6785733987904433972
 MonoBehaviour:
