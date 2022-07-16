@@ -16,7 +16,11 @@ public class Bullet : MonoBehaviour
     {
         body = GetComponent<Rigidbody>();
         if (targetStr != null)
-            target = GameObject.Find(targetStr).transform;
+        {
+            GameObject targetGameObject = GameObject.Find(targetStr);
+            if(targetGameObject != null)
+                target = targetGameObject.transform;
+        }
     }
 
     private void Start()
