@@ -21,7 +21,7 @@ public class EnemyShooter : MonoBehaviour
         yield return new WaitForSeconds(gracePeriod);
         while (true)
         {
-            //SetRotation();
+            SetRotation();
             Instantiate(bulletPrefab, transform);
             clip--;
             if (clip == 0)
@@ -42,6 +42,6 @@ public class EnemyShooter : MonoBehaviour
 
         if (target.position.x < transform.position.x) direction.eulerAngles = new Vector3(0, 180, 0);
         else direction.eulerAngles = Vector3.zero;
-        transform.rotation = direction;
+        transform.parent.parent.parent.rotation = direction;
     }
 }

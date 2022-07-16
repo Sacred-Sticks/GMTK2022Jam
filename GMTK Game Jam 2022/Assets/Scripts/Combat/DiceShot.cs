@@ -11,17 +11,20 @@ public class DiceShot : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if(!collision.gameObject.CompareTag(targetTag))
-            return;
+            Destroy(this.gameObject);
 
         Health health = collision.gameObject.GetComponent<Health>();
-        if(health == null)
+        if (health == null)
+        {
+            Destroy(this.gameObject);
             return;
+        }
 
         int diceValue = Random.Range(1, sides + 1);
         health.ModifyHealth(-diceValue);
 
         TextMeshPro textInstance = Instantiate(rollResultText, transform.position + Vector3.up, Quaternion.identity);
         textInstance.text = diceValue.ToString();
-        Destroy(gameObject);
+        Destroy(this.gameObject);
     }
 }
