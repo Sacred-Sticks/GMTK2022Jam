@@ -23,7 +23,7 @@ public class DiceShot : MonoBehaviour
         int diceValue = Random.Range(1, sides + 1);
         health.ModifyHealth(-diceValue);
 
-        TextMeshPro textInstance = Instantiate(rollResultText, transform.position + Vector3.up, Quaternion.identity);
+        TextMeshPro textInstance = Instantiate(rollResultText, transform.position + Vector3.up + Vector3.forward * -10, Quaternion.identity);
         textInstance.text = diceValue.ToString();
         Destroy(this.gameObject);
     }
