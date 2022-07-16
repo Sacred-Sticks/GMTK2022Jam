@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class ModifyMoveSpeed : Modifier
 {
+    [SerializeField] private string playerStr;
+
     private PlayerMovement movement;
 
     private int modifierValue;
 
     public override void FindTarget()
     {
-        var player = GameObject.Find("Player");
+        var player = GameObject.Find(playerStr);
         movement = player.GetComponent<PlayerMovement>();
     }
 
