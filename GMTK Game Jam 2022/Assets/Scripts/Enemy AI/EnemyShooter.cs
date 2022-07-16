@@ -37,6 +37,9 @@ public class EnemyShooter : MonoBehaviour
 
     private void SetRotation()
     {
+        if(target == null)
+            return;
+
         if (target.position.x < transform.position.x) direction.eulerAngles = new Vector3(0, 180, 0);
         else direction.eulerAngles = Vector3.zero;
         transform.rotation = direction;
