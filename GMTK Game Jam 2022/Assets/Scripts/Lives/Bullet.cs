@@ -15,15 +15,18 @@ public class Bullet : MonoBehaviour
     private void Awake()
     {
         body = GetComponent<Rigidbody>();
-        target = GameObject.Find(targetStr).transform;
+        if (targetStr != null)
+            target = GameObject.Find(targetStr).transform;
     }
 
     private void Start()
     {
-        if (target.position.x > transform.position.x) 
-            body.velocity = velocity;
-        else body.velocity = -velocity;
-
+        if (target != null)
+        {
+            if (target.position.x > transform.position.x)
+                body.velocity = velocity;
+            else body.velocity = -velocity;
+        }
         StartCoroutine(DeathCycle());
     }
 

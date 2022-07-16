@@ -55,4 +55,9 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(jumpWaitTime);
         isJumping = false;
     }
+
+    public void SetMovementSpeed(int movementSpeed)
+    {
+        this.movementSpeed = movementSpeed;
+    }
 }
