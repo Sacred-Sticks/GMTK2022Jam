@@ -732,8 +732,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b235b4b1a52c74832870328e1309a2ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputs: {fileID: 0}
-  projectile: {fileID: 0}
+  inputs: {fileID: 1806306222}
+  projectile: {fileID: 205165774173072293, guid: b08c5d656dfda47e5a9d558b8401fa22, type: 3}
+  firingDelay: 0.5
 --- !u!1 &1687157537
 GameObject:
   m_ObjectHideFlags: 0
