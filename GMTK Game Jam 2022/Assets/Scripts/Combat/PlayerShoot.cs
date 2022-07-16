@@ -23,7 +23,7 @@ public class PlayerShoot : MonoBehaviour
         if(inputs.GetFiring() > 0f && firingDelayRemaining == 0f)
         {
             GameObject obj = Instantiate(projectile, muzzle.position, muzzle.rotation);
-            obj.GetComponent<Rigidbody>().velocity = rb.velocity + new Vector3(velocity, 0f, 0f);
+            obj.GetComponent<Rigidbody>().velocity = rb.velocity + obj.transform.right * velocity;
             firingDelayRemaining += firingDelay;
         }
     }

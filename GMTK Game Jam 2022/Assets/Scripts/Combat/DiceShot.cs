@@ -48,6 +48,7 @@ public class DiceShot : MonoBehaviour
         {
             struckObjects.Add(collision.gameObject);
         }
+        Destroy(this.gameObject);
     }
 
     private void ResolveRoll()
