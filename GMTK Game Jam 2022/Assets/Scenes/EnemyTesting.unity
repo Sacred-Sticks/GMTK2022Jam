@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -867,10 +867,6 @@ PrefabInstance:
     - target: {fileID: 5343784497208408999, guid: 7bf0f170a5fd1e84eb064cc9f1a60e3d, type: 3}
       propertyPath: m_Name
       value: Enemy Robot
-      objectReference: {fileID: 0}
-    - target: {fileID: 5343784497208408999, guid: 7bf0f170a5fd1e84eb064cc9f1a60e3d, type: 3}
-      propertyPath: m_TagString
-      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7bf0f170a5fd1e84eb064cc9f1a60e3d, type: 3}
