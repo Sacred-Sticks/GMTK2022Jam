@@ -50,7 +50,7 @@ public class EnemyJumper : MonoBehaviour
             //Wait for Landing
             yield return new WaitForSeconds(jumpTime);
             body.velocity = Vector3.zero;
-            Debug.Log("Landed");
+            //Debug.Log("Landed");
         }
         Debug.Log("Broke from Jumping Loop");
     }

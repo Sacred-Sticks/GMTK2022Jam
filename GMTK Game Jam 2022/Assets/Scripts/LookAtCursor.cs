@@ -5,21 +5,22 @@ using UnityEngine;
 public class LookAtCursor : MonoBehaviour
 {
     [SerializeField] private Transform target;
-    [SerializeField] private float offset;
+    [SerializeField] private float forwardsOffset;
+    [SerializeField] private float lowClamp;
+    [SerializeField] private float highClamp;
 
     private Vector3 lookAt;
+    float angle;
 
     private void Update()
     {
-        //lookAt = transform.right * target.position.x + transform.up * target.position.y;
-        //transform.LookAt(lookAt);
-
-
-        float angle = Mathf.Atan2(target.position.x - transform.position.x, target.position.y - transform.position.y) * 180 / Mathf.PI;
-        angle = -angle + offset;
-        angle = Mathf.Clamp(angle, 135, 225);
-        lookAt = Vector3.forward * angle;
-        Debug.Log(lookAt);
-        transform.rotation = Quaternion.Euler(lookAt);
-    }
+        angle = Mathf.Atan2(target.position.x - transform.position.x, target.position.y - transform.position.y) * 180 / Mathf.PI;
+        angle += 90;
+        if (transform.rotation.y == 0) angle = angle + forwardsOffset;
+        if (angle > 180) angle -= 360;
+        angle = Mathf.Clamp(angle, lowClamp, highClamp);
+        angle = -angle;
+        lookAt = transform.forward * angle;
+        transform.localRotation = Quaternion.Euler(lookAt);
+}
 }

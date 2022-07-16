@@ -17,6 +17,7 @@ public class ThrowRandom : MonoBehaviour
     private float firing;
 
     private bool thrown;
+    private bool doneRolling = false;
 
     private void Awake()
     {
@@ -41,7 +42,8 @@ public class ThrowRandom : MonoBehaviour
         }
         else
         {
-            Debug.Log("Checking Raycast");
+            if (doneRolling) return;
+            //Debug.Log("Checking Raycast");
             if (Physics.Raycast(transform.position, Vector3.down, .55f))
             {
                 StartCoroutine(GetWinner());
@@ -60,7 +62,11 @@ public class ThrowRandom : MonoBehaviour
 
     private IEnumerator GetWinner()
     {
-        yield return new WaitForSeconds(.5f);
+        doneRolling = true;
+        while (body.velocity != Vector3.zero)
+        {
+            yield return new WaitForFixedUpdate();
+        }
         Debug.Log(GetComponent<CalculateThrow>().CalculateValue() + " is the winning throw.");
     }
 }

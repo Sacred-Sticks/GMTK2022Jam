@@ -885,6 +885,22 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1886272180}
+    - target: {fileID: 1697835561, guid: 89c33d357571d9a4490aade7710c0fb3, type: 3}
+      propertyPath: lowClamp
+      value: -45
+      objectReference: {fileID: 0}
+    - target: {fileID: 1697835561, guid: 89c33d357571d9a4490aade7710c0fb3, type: 3}
+      propertyPath: highClamp
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 1697835561, guid: 89c33d357571d9a4490aade7710c0fb3, type: 3}
+      propertyPath: forwardsOffset
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 7865544139538292224, guid: 89c33d357571d9a4490aade7710c0fb3, type: 3}
+      propertyPath: health
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 7865544139538292225, guid: 89c33d357571d9a4490aade7710c0fb3, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -937,5 +953,9 @@ PrefabInstance:
       propertyPath: inputs
       value: 
       objectReference: {fileID: 1183182529}
+    - target: {fileID: 7865544139538292231, guid: 89c33d357571d9a4490aade7710c0fb3, type: 3}
+      propertyPath: lookAt
+      value: 
+      objectReference: {fileID: 1886272180}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89c33d357571d9a4490aade7710c0fb3, type: 3}
