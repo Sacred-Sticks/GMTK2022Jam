@@ -7,8 +7,6 @@ public class ThrowRandom : MonoBehaviour
 {
     [SerializeField] private GameObject inputManager;
     [SerializeField] private float randomRange;
-    [SerializeField] private float waitTime;
-    [SerializeField] private float sideMultiplier;
     [SerializeField] private float angleMultiplier;
 
     private PlayerInputs inputs;
@@ -28,7 +26,6 @@ public class ThrowRandom : MonoBehaviour
     private void Update()
     {
         firing = inputs.GetFiring();
-        if (transform.position.y > 25) body.velocity = new Vector3(body.velocity.x, body.velocity.y / 3, body.velocity.z);
     }
 
     private void FixedUpdate()
@@ -38,6 +35,7 @@ public class ThrowRandom : MonoBehaviour
             if ((firing > 0))
             {
                 Throw();
+                body.useGravity = true;
             }
         }
         else
@@ -53,7 +51,7 @@ public class ThrowRandom : MonoBehaviour
 
     private void Throw()
     {
-        body.velocity = Random.Range(10, randomRange) * transform.up;
+        body.velocity = Random.Range(1, randomRange) * transform.up;
         body.angularVelocity = (Random.Range(-randomRange, randomRange) * transform.up +
             Random.Range(-randomRange, randomRange) * transform.right +
             Random.Range(-randomRange, randomRange) * transform.forward) * angleMultiplier;
