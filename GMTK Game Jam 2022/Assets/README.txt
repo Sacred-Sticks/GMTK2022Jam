@@ -6,3 +6,7 @@ I've begun setting up the modifiers that the dice control, the speed and health 
 I'll be spending a lot of saturday working on assets such as a main character (most likely a robot), enemies
 (likely robots) and some platforms and such. I won't have time to work on sound,as after I finish the models I plan on 
 focusing the rest of the day on UI and building some levels.
+
+Have a look at the EnemyTesting scene, I quickly whipped up a robot enemy friday night, no need for arms to hold a 
+blaster for it either, it's just got laser eyes (I am not an animator). Let me know what you think. I can make a few
+different colors of it to have different types of enemies.
