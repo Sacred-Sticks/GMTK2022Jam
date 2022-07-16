@@ -7,6 +7,7 @@ public class EnemyJumper : MonoBehaviour
 {
     [SerializeField] private Transform target;
     [SerializeField] private float jumpHeight;
+    [SerializeField] private float maxJumpSpeed;
     [Space]
     [SerializeField] private float lowWait;
     [SerializeField] private float highWait;
@@ -62,6 +63,7 @@ public class EnemyJumper : MonoBehaviour
     private void Jump()
     {
         moveSpeed = Mathf.Abs(target.position.x - transform.position.x) / jumpTime;
+        moveSpeed = Mathf.Clamp(moveSpeed, 0, maxJumpSpeed);
         Vector3 jumpVelocity = moveSpeed * transform.right + jumpSpeed * transform.up;
         body.velocity = jumpVelocity;
     }

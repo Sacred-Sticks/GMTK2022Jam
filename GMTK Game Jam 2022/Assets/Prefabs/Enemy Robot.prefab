@@ -59,7 +59,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 339950464290823226}
-  - component: {fileID: 339950464290823227}
   m_Layer: 6
   m_Name: Base
   m_TagString: Untagged
@@ -85,19 +84,6 @@ Transform:
   m_Father: {fileID: 4711679027116040477}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &339950464290823227
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 339950464290823205}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 0.45, z: 1}
-  m_Center: {x: 0, y: -0.75, z: 0}
 --- !u!1 &2441922984484762749
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,7 +108,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2441922984484762749}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalPosition: {x: 0, y: -0.764, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -140,6 +126,7 @@ GameObject:
   - component: {fileID: 1065996723976608947}
   - component: {fileID: 8750639046015814922}
   - component: {fileID: 2501519495508373567}
+  - component: {fileID: 8822694981342721417}
   m_Layer: 6
   m_Name: Upper Ring
   m_TagString: Untagged
@@ -212,6 +199,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8822694981342721417
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4357349088826298089}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.625, y: 0.125, z: 0.625}
+  m_Center: {x: 0, y: 0.565, z: 0.000000059604645}
 --- !u!1 &5343784497208408999
 GameObject:
   m_ObjectHideFlags: 0
@@ -509,6 +509,7 @@ GameObject:
   - component: {fileID: 1031833211455794302}
   - component: {fileID: 879640714341624307}
   - component: {fileID: 3506728823583272942}
+  - component: {fileID: 2743437031503705458}
   m_Layer: 6
   m_Name: Lower Ring
   m_TagString: Untagged
@@ -581,3 +582,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2743437031503705458
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7620839036129973298}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.46875, y: 0.09375, z: 0.46875}
+  m_Center: {x: -0.000000014901161, y: 0.7149993, z: 0.000000029802322}

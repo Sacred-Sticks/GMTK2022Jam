@@ -40,7 +40,6 @@ public class EnemyCountManager : MonoBehaviour
             if (character.gameObject.tag == "Enemy") 
                 enemies[count++] = character;
         }
-        Debug.Log("This level has " + enemies.Length + " enemies in it");
         return enemies;
     }
 }

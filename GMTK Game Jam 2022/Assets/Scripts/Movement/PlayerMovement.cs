@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
     {
         movementInput = inputs.GetMovement();
         UpdateMovement();
+        UpdateRotation();
     }
 
     private void UpdateMovement()
@@ -41,6 +42,12 @@ public class PlayerMovement : MonoBehaviour
         body.velocity = movement;
         if (!(movementInput.y > 0)) return;
         if (CheckGround() && !isJumping) StartCoroutine("Jump");
+    }
+
+    private void UpdateRotation()
+    {
+        transform.rotation = Quaternion.Euler(Vector3.zero);
+        if (lookAt.position.x < transform.position.x) transform.rotation = Quaternion.Euler(0, 180, 0);
     }
 
     private bool CheckGround()
