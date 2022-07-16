@@ -7,31 +7,23 @@ public class EnemyShooter : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform target;
     [Space]
-    [SerializeField] private float gracePeriod;
     [SerializeField] private float firerate;
-    [SerializeField] private float clipSize;
-    [SerializeField] private float reloadTime;
+    [SerializeField] private int clipSize;
 
     private Quaternion direction;
 
-    private IEnumerator Start()
-    {
-        float clip = clipSize;
+    float timer;
 
-        yield return new WaitForSeconds(gracePeriod);
-        while (true)
+    public IEnumerator Fire(float firingTime)
+    {
+        timer = 0;
+
+        while (timer < firingTime)
         {
             SetRotation();
             Instantiate(bulletPrefab, transform);
-            clip--;
-            if (clip == 0)
-            {
-                yield return new WaitForSeconds(reloadTime);
-                clip = clipSize;
-            } else
-            {
+            timer+= 1.0f / firerate;
                 yield return new WaitForSeconds(1.0f / firerate);
-            }
         }
     }
 
