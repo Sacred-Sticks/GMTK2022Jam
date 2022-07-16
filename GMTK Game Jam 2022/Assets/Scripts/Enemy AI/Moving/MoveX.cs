@@ -42,7 +42,7 @@ public class MoveX : MonoBehaviour
         //Reset Velocity to 0
         body.velocity = Vector3.zero;
         transform.position = new Vector3(target, transform.position.y, transform.position.z);
-        Debug.Log("Finished Moving");
+        //Debug.Log("Finished Moving");
         moveLeft = !moveLeft;
         isMoving = false;
     }
