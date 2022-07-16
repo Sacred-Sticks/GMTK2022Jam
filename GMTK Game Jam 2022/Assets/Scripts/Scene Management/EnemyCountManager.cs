@@ -6,6 +6,9 @@ public class EnemyCountManager : MonoBehaviour
 {
     [SerializeField] private SceneManagement sceneManager;
     [SerializeField] private int enemyLayer;
+    [SerializeField] private int nextScene;
+
+    Health[] characters;
 
     Health[] enemies;
     int[] health;
@@ -25,16 +28,17 @@ public class EnemyCountManager : MonoBehaviour
             health[i] = enemies[i].GetHealth();
             if (health[i] > 0) enemyAlive = true;
         }
-        if (!enemyAlive) sceneManager.LoadNextScene();
+        if (!enemyAlive) sceneManager.LoadScene(nextScene);
     }
 
     private Health[] FindGameObjectsWithLayer() {
-        Health[] enemiesHealth = FindObjectsOfType<Health>();
-        Health[] enemies = null;
+        characters = FindObjectsOfType<Health>();
         int count = 0;
-        foreach (Health character in enemiesHealth)
+        enemies = new Health[characters.Length - 1];
+        foreach (Health character in characters)
         {
-            if (character.gameObject.layer == enemyLayer) enemies[count++] = character;
+            if (character.gameObject.tag == "Enemy") 
+                enemies[count++] = character;
         }
         Debug.Log("This level has " + enemies.Length + " enemies in it");
         return enemies;

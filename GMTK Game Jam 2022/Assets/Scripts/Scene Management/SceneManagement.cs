@@ -3,19 +3,9 @@ using UnityEngine;
 
 public class SceneManagement : MonoBehaviour
 {
-    public SceneManagement Instance { get; private set; }
 
-    int currentScene;
-
-    private void Start()
+    public void LoadScene(int nextScene)
     {
-        instance = this;
-
-        currentScene = 0;
-    }
-
-    public void LoadNextScene()
-    {
-        SceneManager.LoadScene(++currentScene);
+        SceneManager.LoadScene(nextScene);
     }
 }
