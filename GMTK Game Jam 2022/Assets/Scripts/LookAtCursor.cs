@@ -19,7 +19,7 @@ public class LookAtCursor : MonoBehaviour
         if (transform.position.x < target.position.x)
         {
             angle = angle + forwardsOffset;
-            Debug.Log("Rotation Needed Update");
+            //Debug.Log("Rotation Needed Update");
         }
         if (angle > 180) angle -= 360;
         angle = Mathf.Clamp(angle, lowClamp, highClamp);
