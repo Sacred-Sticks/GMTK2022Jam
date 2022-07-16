@@ -34,8 +34,8 @@ public class ThrowRandom : MonoBehaviour
         {
             if ((firing > 0))
             {
-                GetComponent<PlaceDice>().enabled = false;
                 Throw();
+                GetComponent<PlaceDice>().enabled = false;
                 body.useGravity = true;
             }
         }
@@ -52,7 +52,7 @@ public class ThrowRandom : MonoBehaviour
 
     private void Throw()
     {
-        body.velocity = Random.Range(1, randomRange) * transform.up;
+        body.velocity = Random.Range(1, randomRange) * transform.up + body.velocity;
         body.angularVelocity = (Random.Range(-randomRange, randomRange) * transform.up +
             Random.Range(-randomRange, randomRange) * transform.right +
             Random.Range(-randomRange, randomRange) * transform.forward) * angleMultiplier;
