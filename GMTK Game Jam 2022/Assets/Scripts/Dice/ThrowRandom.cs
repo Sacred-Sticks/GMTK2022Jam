@@ -34,6 +34,7 @@ public class ThrowRandom : MonoBehaviour
         {
             if ((firing > 0))
             {
+                GetComponent<PlaceDice>().enabled = false;
                 Throw();
                 body.useGravity = true;
             }
