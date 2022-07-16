@@ -29,6 +29,11 @@ public class Health : MonoBehaviour
         UpdateText();
     }
 
+    public int GetHealth()
+    {
+        return health;
+    }
+
     public void MaximizeHealth()
     {
         health = maxHealth;
