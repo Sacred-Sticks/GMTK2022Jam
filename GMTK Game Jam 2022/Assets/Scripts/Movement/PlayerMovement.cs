@@ -47,6 +47,9 @@ public class PlayerMovement : MonoBehaviour
     private void UpdateRotation()
     {
         transform.rotation = Quaternion.Euler(Vector3.zero);
+        if(lookAt == null)
+            return;
+
         if (lookAt.position.x < transform.position.x) transform.rotation = Quaternion.Euler(0, 180, 0);
     }
 
