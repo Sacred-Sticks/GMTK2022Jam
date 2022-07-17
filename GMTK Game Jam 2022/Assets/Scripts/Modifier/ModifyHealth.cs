@@ -4,16 +4,12 @@ using UnityEngine;
 
 public class ModifyHealth : Modifier
 {
-    [SerializeField] private string playerStr;
-
+    private Health health;
     private int modifierValue;
-
-    [SerializeField] private Health health;
 
     public override void FindTarget()
     {
-        var player = GameObject.Find(playerStr);
-        health = player.GetComponent<Health>();
+        health = FindObjectOfType<PlayerMovement>().gameObject.GetComponent<Health>();
     }
 
     public override void ModifyValue()
@@ -26,5 +22,10 @@ public class ModifyHealth : Modifier
     {
         this.modifierValue = modifierValue;
         Debug.Log("Modifier set to " + this.modifierValue);
+    }
+
+    public override int GetModifierValue()
+    {
+        return modifierValue;
     }
 }

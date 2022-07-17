@@ -4,16 +4,12 @@ using UnityEngine;
 
 public class ModifyMoveSpeed : Modifier
 {
-    [SerializeField] private string playerStr;
-
     private PlayerMovement movement;
-
     private int modifierValue;
 
     public override void FindTarget()
     {
-        var player = GameObject.Find(playerStr);
-        movement = player.GetComponent<PlayerMovement>();
+        movement = FindObjectOfType<PlayerMovement>();
     }
 
     public override void ModifyValue()
@@ -25,5 +21,10 @@ public class ModifyMoveSpeed : Modifier
     public override void SetModifierValue(int modifierValue)
     {
         this.modifierValue = modifierValue;
+    }
+
+    public override int GetModifierValue()
+    {
+        return modifierValue;
     }
 }

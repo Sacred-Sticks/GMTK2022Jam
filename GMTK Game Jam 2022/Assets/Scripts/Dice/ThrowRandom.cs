@@ -64,7 +64,7 @@ public class ThrowRandom : MonoBehaviour
     private IEnumerator GetWinner()
     {
         doneRolling = true;
-        while (body.velocity != Vector3.zero)
+        while (body.velocity.magnitude > 0.01f)
         {
             yield return new WaitForFixedUpdate();
         }

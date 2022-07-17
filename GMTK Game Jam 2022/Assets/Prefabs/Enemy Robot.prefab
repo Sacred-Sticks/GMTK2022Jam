@@ -46,10 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 468396269384032175, guid: 78b724258502c8f4991d915c144ac509, type: 3}
   target: {fileID: 0}
-  gracePeriod: 0.5
   firerate: 3
   clipSize: 6
-  reloadTime: 1
+  angularOffset: 0
 --- !u!1 &339950464290823205
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,8 +239,8 @@ Transform:
   m_GameObject: {fileID: 5343784497208408999}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.5, y: -2, z: 1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 9168380650674851020}
   - {fileID: 339950464290823226}
@@ -262,7 +261,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 120
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!114 &5343784497208408997
 MonoBehaviour:
@@ -271,13 +270,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5343784497208408999}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 754fa6aac6abeeb4abd266498f2f73aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   jumpHeight: 3
+  maxJumpSpeed: 0
   lowWait: 0.25
   highWait: 0.5
   feet: {fileID: 1416862791420716316}
@@ -311,6 +311,7 @@ GameObject:
   - component: {fileID: 932183679739399398}
   - component: {fileID: 8784770207761879097}
   - component: {fileID: 8784770207761879102}
+  - component: {fileID: 329890234}
   m_Layer: 6
   m_Name: Head
   m_TagString: Untagged
@@ -399,6 +400,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.24999994, z: 0.44385815}
   m_Center: {x: 0, y: -0.4, z: -0.000000022351742}
+--- !u!114 &329890234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5577116523561464978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f205ca9f091198446bcbdd42103cc454, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  forwardsOffset: 180
+  lowClamp: -45
+  highClamp: 45
 --- !u!1 &5636375172494582430
 GameObject:
   m_ObjectHideFlags: 0

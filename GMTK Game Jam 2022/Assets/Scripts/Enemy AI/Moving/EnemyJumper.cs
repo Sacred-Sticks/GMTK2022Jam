@@ -66,5 +66,6 @@ public class EnemyJumper : MonoBehaviour
         moveSpeed = Mathf.Clamp(moveSpeed, 0, maxJumpSpeed);
         Vector3 jumpVelocity = moveSpeed * transform.right + jumpSpeed * transform.up;
         body.velocity = jumpVelocity;
+        Debug.Log("Jumped");
     }
 }

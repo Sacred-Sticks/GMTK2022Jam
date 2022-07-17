@@ -15,10 +15,4 @@ public class SetModifiers : MonoBehaviour
             modifiers[i].ModifyValue();
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

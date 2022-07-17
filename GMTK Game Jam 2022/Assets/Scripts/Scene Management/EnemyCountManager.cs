@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class EnemyCountManager : MonoBehaviour
 {
-    [SerializeField] private SceneManagement sceneManager;
     [SerializeField] private int enemyLayer;
     [SerializeField] private int nextScene;
 
-    Health[] characters;
 
+    private SceneManagement sceneManager;
+    Health[] characters;
     Health[] enemies;
+
     int[] health;
     bool enemyAlive;
+
+    private void Awake()
+    {
+        sceneManager = FindObjectOfType<SceneManagement>();
+    }
 
     private void Start()
     {

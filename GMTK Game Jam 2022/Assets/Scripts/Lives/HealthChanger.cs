@@ -16,6 +16,7 @@ public class HealthChanger : MonoBehaviour
         {
             health.ModifyHealth(modification);
         }
+        if (collision.gameObject.layer == 3 && gameObject.layer == 6|| collision.gameObject.layer == 10) return;
         Destroy(this.gameObject);
     }
 }

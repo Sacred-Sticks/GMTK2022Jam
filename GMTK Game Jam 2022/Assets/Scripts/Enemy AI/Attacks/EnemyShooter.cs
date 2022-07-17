@@ -9,10 +9,13 @@ public class EnemyShooter : MonoBehaviour
     [Space]
     [SerializeField] private float firerate;
     [SerializeField] private int clipSize;
+    [Space]
+    [SerializeField] private float angularOffset;
 
     private Quaternion direction;
 
     float timer;
+    float angle;
 
     public IEnumerator Fire(float firingTime)
     {
@@ -21,7 +24,7 @@ public class EnemyShooter : MonoBehaviour
         while (timer < firingTime)
         {
             SetRotation();
-            Instantiate(bulletPrefab, transform);
+            Instantiate(bulletPrefab, transform.position, transform.rotation);
             timer+= 1.0f / firerate;
                 yield return new WaitForSeconds(1.0f / firerate);
         }

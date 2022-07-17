@@ -9,10 +9,11 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] private float velocity = 4f;
     [SerializeField] private float firingDelay = 0.5f;
     private float firingDelayRemaining = 0f;
+    int damage = 3;
 
-    public DiceShot GetDiceShot()
+    public void SetDamage(int damage)
     {
-        return diceShot;
+        this.damage = damage;
     }
 
     void Update()
@@ -23,6 +24,7 @@ public class PlayerShoot : MonoBehaviour
         {
             DiceShot instance = Instantiate(diceShot, muzzle.position, muzzle.rotation);
             instance.GetComponent<Rigidbody>().velocity = instance.gameObject.transform.right * velocity;
+            instance.Damage = damage;
             firingDelayRemaining += firingDelay;
         }
     }

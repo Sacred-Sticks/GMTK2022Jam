@@ -6,9 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/DiceTesting.unity
-    guid: e9a8a789bd288684598581b5e75358fe
+    path: Assets/Scenes/Levels/Dice Level 1.unity
+    guid: 831da32ac1291d04a98e7237a4d9bbe2
   - enabled: 1
     path: Assets/Scenes/Levels/Jumper.unity
     guid: bef7855594725ee4299da148b4a5a73e
+  - enabled: 1
+    path: Assets/Scenes/Levels/Dice Level 2.unity
+    guid: 146b1656556e19e4e9c16774a61fcb63
+  - enabled: 1
+    path: Assets/Scenes/Levels/Horizontal Army.unity
+    guid: 5842399a9316c4447a79bae5ff8af18a
+  - enabled: 1
+    path: Assets/Scenes/Levels/Dice Level 3.unity
+    guid: e9a8a789bd288684598581b5e75358fe
+  - enabled: 1
+    path: Assets/Scenes/Levels/Sky Shooter.unity
+    guid: 6c69f0dd5ac9ab6488b88887ceac8a76
   m_configObjects: {}

@@ -7,4 +7,6 @@ public abstract class Modifier : MonoBehaviour
     public abstract void ModifyValue();
 
     public abstract void SetModifierValue(int modifierValue);
+
+    public abstract int GetModifierValue();
 }

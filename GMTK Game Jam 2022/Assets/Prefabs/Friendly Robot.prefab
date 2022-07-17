@@ -166,9 +166,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputs: {fileID: 0}
-  movementSpeed: 3
-  jumpHeight: 3
-  jumpWaitTime: 0.25
+  movementSpeed: 6
+  jumpHeight: 4
+  jumpWaitTime: 0.125
   feet: {fileID: 7865544140475697691}
   groundLayer:
     serializedVersion: 2
@@ -627,6 +627,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  forwardsOffset: 0
-  lowClamp: 0
-  highClamp: 0
+  forwardsOffset: 180
+  lowClamp: -45
+  highClamp: 45
