@@ -22,7 +22,7 @@ public class PlayerShoot : MonoBehaviour
         if(inputs.GetFiring() > 0f && firingDelayRemaining == 0f)
         {
             DiceShot instance = Instantiate(diceShot, muzzle.position, muzzle.rotation);
-            instance.GetComponent<Rigidbody>().velocity = diceShot.transform.right * velocity;
+            instance.GetComponent<Rigidbody>().velocity = instance.gameObject.transform.right * velocity;
             firingDelayRemaining += firingDelay;
         }
     }
