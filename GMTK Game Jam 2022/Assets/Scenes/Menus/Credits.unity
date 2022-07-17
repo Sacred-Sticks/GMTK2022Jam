@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 9170240631445286292, guid: 300ad85ac3594234eb19f5be2c12be54, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 9170240632578623585, guid: 300ad85ac3594234eb19f5be2c12be54, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3222,7 +3226,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Levels:\n     Lucas Ackman\n\nProgramming: \n     David S. & Lucas Ackman"
+  m_text: "Lucas Ackman:\n     Enemy AI\n     Robot Models\n     UI System\n\nDavid
+    S.\n     Combat System\n     Circuit Board Art"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
