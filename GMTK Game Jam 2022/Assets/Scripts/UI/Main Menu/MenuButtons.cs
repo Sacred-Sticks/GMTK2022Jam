@@ -24,4 +24,9 @@ public class MenuButtons : MonoBehaviour
     {
         sceneManager.LoadScene(controlsIndex);
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }

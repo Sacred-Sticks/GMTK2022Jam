@@ -8,12 +8,12 @@ public class ShowHealth : MonoBehaviour
     [SerializeField] private string message;
     private TMP_Text text;
 
-    [SerializeField] private int health;
-    [SerializeField] private Health healthObj;
+    private int health;
+    private Health healthObj;
     private void Awake()
     {
         text = GetComponent<TMP_Text>();
-        healthObj = FindObjectOfType<Health>();
+        healthObj = FindObjectOfType<PlayerMovement>().GetComponent<Health>();
     }
 
     private void Update()

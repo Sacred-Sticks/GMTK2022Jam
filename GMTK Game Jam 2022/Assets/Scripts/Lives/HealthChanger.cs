@@ -10,14 +10,15 @@ public class HealthChanger : MonoBehaviour
     [SerializeField] private float changeDelay;
 
     private Health health;
+    private bool changing = false;
 
     private void OnCollisionEnter(Collision collision)
     {
         health = collision.gameObject.GetComponent<Health>();
         if (health == null) return;
-        
-        if (dontDestroy) StartCoroutine(DealDamage());
-        else
+
+        if (dontDestroy && !changing) StartCoroutine(DealDamage());
+        else if (!dontDestroy)
         {
             health.ModifyHealth(modification);
             Destroy(this.gameObject);
@@ -31,10 +32,13 @@ public class HealthChanger : MonoBehaviour
 
     private IEnumerator DealDamage()
     {
+        changing = true;
         while (health != null)
         {
             health.ModifyHealth(modification);
+            Debug.Log("Heyo");
             yield return new WaitForSeconds(changeDelay);
         }
+        changing = false;
     }
 }
