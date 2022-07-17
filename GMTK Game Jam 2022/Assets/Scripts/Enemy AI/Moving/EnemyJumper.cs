@@ -51,9 +51,7 @@ public class EnemyJumper : MonoBehaviour
             //Wait for Landing
             yield return new WaitForSeconds(jumpTime);
             body.velocity = Vector3.zero;
-            //Debug.Log("Landed");
         }
-        Debug.Log("Broke from Jumping Loop");
     }
     private bool CheckGround()
     {
@@ -66,6 +64,5 @@ public class EnemyJumper : MonoBehaviour
         moveSpeed = Mathf.Clamp(moveSpeed, 0, maxJumpSpeed);
         Vector3 jumpVelocity = moveSpeed * transform.right + jumpSpeed * transform.up;
         body.velocity = jumpVelocity;
-        Debug.Log("Jumped");
     }
 }

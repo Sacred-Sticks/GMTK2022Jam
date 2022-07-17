@@ -14,6 +14,7 @@ public class LookAtCursor : MonoBehaviour
 
     private void Update()
     {
+        if (target == null || transform == null) return;
         angle = Mathf.Atan2(target.position.x - transform.position.x, target.position.y - transform.position.y) * 180 / Mathf.PI;
         angle += 90;
         if (transform.position.x < target.position.x)

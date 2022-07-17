@@ -12,7 +12,6 @@ public class MenuButtons : MonoBehaviour
     private void Awake()
     {
         sceneManager = FindObjectOfType<SceneManagement>();
-        Debug.Log("Scene Manager named " + sceneManager.name);
     }
 
     public void LoadLevel()
@@ -23,7 +22,6 @@ public class MenuButtons : MonoBehaviour
 
     public void LoadControls()
     {
-        Debug.Log("Loading Controls");
         sceneManager.LoadScene(controlsIndex);
     }
 }

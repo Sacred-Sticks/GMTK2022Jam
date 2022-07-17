@@ -187,8 +187,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2269c17b50897c94789f4f35e753d6d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 3
   healthText: {fileID: 0}
+  isPlayer: 1
 --- !u!114 &1549246950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,7 +206,7 @@ MonoBehaviour:
   muzzle: {fileID: 7865544139712285545}
   diceShot: {fileID: 434865328961928247, guid: b08c5d656dfda47e5a9d558b8401fa22, type: 3}
   velocity: 7
-  firingDelay: 0.125
+  firingDelay: 0.5
 --- !u!1 &7865544139712285546
 GameObject:
   m_ObjectHideFlags: 0

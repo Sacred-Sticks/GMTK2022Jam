@@ -6,17 +6,35 @@ using UnityEngine;
 public class HealthChanger : MonoBehaviour
 {
     [SerializeField] private int modification;
+    [SerializeField] private bool dontDestroy;
+    [SerializeField] private float changeDelay;
 
     private Health health;
 
     private void OnCollisionEnter(Collision collision)
     {
         health = collision.gameObject.GetComponent<Health>();
-        if (health != null)
+        if (health == null) return;
+        
+        if (dontDestroy) StartCoroutine(DealDamage());
+        else
         {
             health.ModifyHealth(modification);
+            Destroy(this.gameObject);
         }
-        if (collision.gameObject.layer == 3 && gameObject.layer == 6|| collision.gameObject.layer == 10) return;
-        Destroy(this.gameObject);
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        health = null;
+    }
+
+    private IEnumerator DealDamage()
+    {
+        while (health != null)
+        {
+            health.ModifyHealth(modification);
+            yield return new WaitForSeconds(changeDelay);
+        }
     }
 }

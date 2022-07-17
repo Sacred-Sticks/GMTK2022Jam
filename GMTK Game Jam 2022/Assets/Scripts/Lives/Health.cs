@@ -7,6 +7,7 @@ public class Health : MonoBehaviour
 {
     [SerializeField] private int health;
     [SerializeField] private TextMeshPro healthText;
+    [SerializeField] private bool isPlayer;
 
     void Start()
     {
@@ -17,7 +18,10 @@ public class Health : MonoBehaviour
     {
         health += modifier;
         UpdateText();
-        if (health <= 0) Destroy(this.gameObject);
+        SceneManagement sceneManager = FindObjectOfType<SceneManagement>();
+        if (health > 0) return;
+        if (isPlayer) sceneManager.LoadScene(0);
+        Destroy(this.gameObject);
     }
 
     public void SetHealth(int health)

@@ -16,7 +16,6 @@ public class DontDestroyManager : MonoBehaviour
     {
         foreach (var dontDestroy in dontDestroys)
         {
-            Debug.Log("Checking " + dontDestroy.name);
             if (dontDestroy.name != "Level Manager")
                 Destroy(dontDestroy);
         }
