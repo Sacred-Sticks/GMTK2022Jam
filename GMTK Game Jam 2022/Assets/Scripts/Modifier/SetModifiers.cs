@@ -12,6 +12,7 @@ public class SetModifiers : MonoBehaviour
         for (int i = 0; i < modifiers.Length; i++)
         {
             modifiers[i].FindTarget();
+            modifiers[i].ModifyValue();
         }
     }
 

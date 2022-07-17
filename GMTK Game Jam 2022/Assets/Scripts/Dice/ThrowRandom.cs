@@ -5,6 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class ThrowRandom : MonoBehaviour
 {
+    [SerializeField] private Modifier modifier;
+    [Space]
     [SerializeField] private GameObject inputManager;
     [SerializeField] private float randomRange;
     [SerializeField] private float angleMultiplier;
@@ -66,6 +68,7 @@ public class ThrowRandom : MonoBehaviour
         {
             yield return new WaitForFixedUpdate();
         }
-        Debug.Log(GetComponent<CalculateThrow>().CalculateValue() + " is the winning throw.");
+        modifier.SetModifierValue(GetComponent<CalculateThrow>().CalculateValue());
+        GetComponent<ShowButton>().EnableButton();
     }
 }

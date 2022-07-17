@@ -8,7 +8,7 @@ public class ModifyHealth : Modifier
 
     private int modifierValue;
 
-    private Health health;
+    [SerializeField] private Health health;
 
     public override void FindTarget()
     {
@@ -25,5 +25,6 @@ public class ModifyHealth : Modifier
     public override void SetModifierValue(int modifierValue)
     {
         this.modifierValue = modifierValue;
+        Debug.Log("Modifier set to " + this.modifierValue);
     }
 }
