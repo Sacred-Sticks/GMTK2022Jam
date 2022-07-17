@@ -18,6 +18,7 @@ public class EnemyCountManager : MonoBehaviour
     private void Awake()
     {
         sceneManager = FindObjectOfType<SceneManagement>();
+        nextScene = sceneManager.GetSceneIndex() + 1;
     }
 
     private void Start()

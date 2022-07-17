@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4121888035725983759}
   m_Layer: 0
   m_Name: Health Modification
-  m_TagString: Untagged
+  m_TagString: DontDestroy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

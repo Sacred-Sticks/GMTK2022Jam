@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5902400976699118302}
   m_Layer: 0
   m_Name: Speed Modification
-  m_TagString: Untagged
+  m_TagString: DontDestroy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

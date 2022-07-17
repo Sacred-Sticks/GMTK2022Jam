@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Menus/Menu.unity
+    guid: e4081b6200b29324abdb4416977bc61b
+  - enabled: 1
+    path: Assets/Scenes/Menus/Controls.unity
+    guid: e8580b0c34b45fe458e8f6cd6f2ab020
+  - enabled: 1
     path: Assets/Scenes/Levels/Dice Level 1.unity
     guid: 831da32ac1291d04a98e7237a4d9bbe2
   - enabled: 1
@@ -23,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Sky Shooter.unity
     guid: 6c69f0dd5ac9ab6488b88887ceac8a76
+  - enabled: 1
+    path: Assets/Scenes/Menus/Credits.unity
+    guid: 5a204b9b406304b4e9ba1c6fbdca9482
   m_configObjects: {}

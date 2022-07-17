@@ -6,8 +6,16 @@ public class NextScene : MonoBehaviour
 {
     [SerializeField] private int sceneIndex;
 
+    private SceneManagement sceneManager;
+
+    private void Awake()
+    {
+        sceneManager = FindObjectOfType<SceneManagement>();
+        sceneIndex = sceneManager.GetSceneIndex() + 1;
+    }
+
     public void NextLevel()
     {
-        FindObjectOfType<SceneManagement>().LoadScene(sceneIndex);
+        sceneManager.LoadScene(sceneIndex);
     }
 }
