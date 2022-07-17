@@ -5,10 +5,15 @@ public class PlayerShoot : MonoBehaviour
 {
     [SerializeField] private PlayerInputs inputs;
     [SerializeField] private Transform muzzle;
-    [SerializeField] private GameObject projectile;
+    [SerializeField] private DiceShot diceShot;
     [SerializeField] private float velocity = 4f;
     [SerializeField] private float firingDelay = 0.5f;
     private float firingDelayRemaining = 0f;
+
+    public DiceShot GetDiceShot()
+    {
+        return diceShot;
+    }
 
     void Update()
     {
@@ -16,8 +21,8 @@ public class PlayerShoot : MonoBehaviour
 
         if(inputs.GetFiring() > 0f && firingDelayRemaining == 0f)
         {
-            GameObject obj = Instantiate(projectile, muzzle.position, muzzle.rotation);
-            obj.GetComponent<Rigidbody>().velocity = obj.transform.right * velocity;
+            DiceShot instance = Instantiate(diceShot, muzzle.position, muzzle.rotation);
+            instance.GetComponent<Rigidbody>().velocity = diceShot.transform.right * velocity;
             firingDelayRemaining += firingDelay;
         }
     }
